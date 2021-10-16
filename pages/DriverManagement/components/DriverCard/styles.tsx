@@ -12,7 +12,7 @@ export const styCardWrapper = css`
 
   .header {
     display: flex;
-    padding: 12px;
+    padding: 16px 24px;
     border-bottom: 2px solid ${NN300};
 
     > p {
@@ -31,7 +31,7 @@ export const styCardWrapper = css`
     display: flex;
     align-items: center;
     column-gap: 24px;
-    padding: 8px 16px 16px 16px;
+    padding: 8px 24px 16px 24px;
 
     ${mq(MD)} {
       flex-direction: column;

@@ -110,12 +110,14 @@ export const styDriverCardList = css`
   ${mq(MD)} {
     margin-right: -48px;
     padding-right: 48px;
-    grid: auto / auto-flow minmax(280px, 400px);
+    grid: auto / auto-flow minmax(320px, 400px);
+  
   }
 
   ${mq(LG)} {
     margin-right: -48px;
     padding-right: 48px;
-    grid: auto / auto-flow minmax(280px, 400px);
+    grid: auto / auto-flow minmax(320px, 400px);
+    grid-gap: 48px;
   }
 `;

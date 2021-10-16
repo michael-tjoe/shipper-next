@@ -29,7 +29,7 @@ html {
     display:flex;
 
     .content{
-      background: lightgray;
+      background-color: #ebedef;
       padding: 20px;
       flex-grow: 1;
       display: flex;
