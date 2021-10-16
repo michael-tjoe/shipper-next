@@ -15,8 +15,10 @@ export const styAsideWrapper = css`
   z-index: 2;
   height: calc(100% - 70px);
   transition: 0.2s ease-out;
+  visibility: hidden;
 
   &[data-open] {
+    visibility: visible;
     opacity: 1;
   }
 
@@ -24,6 +26,7 @@ export const styAsideWrapper = css`
     width: 25%;
     opacity: 1;
     transform: scale(1);
+    visibility: visible;
   }
 
   > ul {

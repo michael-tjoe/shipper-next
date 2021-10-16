@@ -30,10 +30,14 @@ html {
 
     .content{
       background: lightgray;
-      padding: 48px;
-      flex-grow:1;
+      padding: 20px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      overflow:hidden;
 
       ${mq(MD)} {
+        padding: 48px;
         margin-left: 25%;
       }
     }

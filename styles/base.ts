@@ -14,7 +14,8 @@ export const styRow = css`
   margin: 0 -15px;
 `;
 
-export const body1 = css`
+export const main1 = css`
+  font-weight: 600;
   font-size: ${pxToRem(22)};
   line-height: 1.4;
 `;
@@ -22,4 +23,9 @@ export const body1 = css`
 export const body2 = css`
   font-size: ${pxToRem(16)};
   line-height: 1.15;
+`;
+
+export const body3 = css`
+  font-size: ${pxToRem(14)};
+  line-height: 28px;
 `;
