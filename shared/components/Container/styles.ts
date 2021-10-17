@@ -1,6 +1,6 @@
 import { css } from "@emotion/css";
 import { mq } from "@styles/helpers";
-import { MD } from "@styles/variables/breakpoints";
+import { MD, LG } from "@styles/variables/breakpoints";
 
 export const styLayoutContainer = css`
   display: flex;
@@ -23,6 +23,10 @@ export const styLayoutContainer = css`
       ${mq(MD)} {
         padding: 48px;
         margin-left: 25%;
+      }
+      ${mq(LG)} {
+        padding: 48px;
+        margin-left: 20%;
       }
     }
   }

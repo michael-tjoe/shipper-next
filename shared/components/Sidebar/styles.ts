@@ -1,7 +1,7 @@
 import { css } from "@emotion/css";
 import { N0L, NN100, YN100 } from "@styles/variables/colors";
 import { mq } from "@styles/helpers";
-import { MD } from "@styles/variables/breakpoints";
+import { MD, LG } from "@styles/variables/breakpoints";
 import { body2 } from "@styles/base";
 
 export const styAsideWrapper = css`
@@ -27,6 +27,10 @@ export const styAsideWrapper = css`
     opacity: 1;
     transform: scale(1);
     visibility: visible;
+  }
+
+  ${mq(LG)} {
+    width: 20%;
   }
 
   > ul {

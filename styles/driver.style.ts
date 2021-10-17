@@ -103,6 +103,8 @@ export const styDriverCardWrapper = css`
   flex-grow: 1;
   max-height: 100%;
   overflow: auto;
+  margin-right: -48px;
+  padding-right: 48px;
 `;
 
 export const styDriverCardList = css`
@@ -114,8 +116,6 @@ export const styDriverCardList = css`
   overflow: auto;
 
   ${mq(MD)} {
-    margin-right: -48px;
-    padding-right: 48px;
     grid: auto / auto-flow minmax(320px, 400px);
   }
 
