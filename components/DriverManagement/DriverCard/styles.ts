@@ -12,6 +12,8 @@ export const styCardWrapper = css`
 
   .header {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
     padding: 16px 24px;
     border-bottom: 2px solid ${NN300};
 
@@ -23,6 +25,32 @@ export const styCardWrapper = css`
         font-weight: 400;
         color: ${YN100};
         text-transform: uppercase;
+      }
+    }
+
+    .dots {
+      position: relative;
+      width: 6px;
+      height: 6px;
+      background: ${NN300};
+      border-radius: 50%;
+
+      &:before,
+      &:after {
+        top: 50%;
+        position: absolute;
+        border-radius: 50%;
+        background: ${NN300};
+        content: "";
+        width: 6px;
+        height: 6px;
+        transform: translate(0, -50%);
+      }
+      &:before {
+        left: -9px;
+      }
+      &:after {
+        right: -9px;
       }
     }
   }

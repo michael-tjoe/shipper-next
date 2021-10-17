@@ -156,7 +156,7 @@ export const DriverManagement: FC<DriverManagementProps> = ({ data }) => {
 
 export async function getServerSideProps() {
   const res = await fetch(
-    `https://randomuser.me/api/?inc=id,name,phone,email,dob,picture&results=31&seed=abc`
+    `https://randomuser.me/api/?inc=id,name,phone,email,dob,picture&results=30&seed=abc`
   );
   const data = await res.json();
 

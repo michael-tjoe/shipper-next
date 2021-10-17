@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import Image from "next/image";
-import dayjs  from "dayjs";
+import dayjs from "dayjs";
 import { styCardWrapper } from "./styles";
 import { DriverInfo } from "../../../types/driver";
 
@@ -16,10 +16,11 @@ export const DriverCard: FC<DriverCardProps> = ({ detail }) => {
           <p>
             Driver ID &nbsp;&nbsp;<strong>{detail.id.value}</strong>
           </p>
+          <div className="dots"></div>
         </div>
         <div className="driver-info">
           <div className="photo">
-            <Image alt="" layout="fill" src={ detail.picture.medium} />
+            <Image alt="" layout="fill" src={detail.picture.medium} />
           </div>
 
           <dl className="driver-data">
@@ -33,7 +34,7 @@ export const DriverCard: FC<DriverCardProps> = ({ detail }) => {
             <dd>{detail.email}</dd>
 
             <dt data-hidden="true">Tanggal Lahir</dt>
-            <dd>{dayjs(detail.dob.date).format('DD-MM-YYYY')}</dd>
+            <dd>{dayjs(detail.dob.date).format("DD-MM-YYYY")}</dd>
           </dl>
         </div>
       </div>
