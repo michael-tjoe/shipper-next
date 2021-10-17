@@ -116,7 +116,7 @@ export const DriverManagement: FC<DriverManagementProps> = ({ data }) => {
               onChange={handleChangeSearchKeyword}
             />
           </div>
-          <Button block>Tambah Driver</Button>
+          <Button icon="/icons/ic-plus.svg" block>Tambah Driver</Button>
         </div>
       </div>
 
