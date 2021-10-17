@@ -1,7 +1,7 @@
 import React, { FC, ReactNode, useState } from "react";
 import Header from "@shared/components/Header";
 import { Sidebar } from "@shared/components/Sidebar";
-import "@styles/global";
+import { styLayoutContainer } from "./styles";
 
 interface ShipperContainerProps {
   children: ReactNode;
@@ -21,7 +21,7 @@ export const ShipperContainer: FC<ShipperContainerProps> = ({ children }) => {
   };
 
   return (
-    <div className="app">
+    <div className={styLayoutContainer}>
       <Header
         showMobileNav={displaySidebar}
         onClickMobileButton={handleToggleSidebar}

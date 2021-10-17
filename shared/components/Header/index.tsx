@@ -1,6 +1,5 @@
 import React, { FC, useState } from "react";
 import Image from "next/image";
-import { styContainer } from "@styles/base";
 import { styHeaderWrapper, styBurgerButton } from "./styles";
 
 interface HeaderProps {

@@ -80,12 +80,15 @@ export const styBurgerButton = css`
 `;
 
 export const styHeaderWrapper = css`
+  position: sticky;
+  top: 0;
   display: flex;
   height: 70px;
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
   width: 100%;
+  z-index: 3;
   background-color: ${N0L};
 
   .logo {

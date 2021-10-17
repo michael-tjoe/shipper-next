@@ -1,14 +1,19 @@
-import React from "react";
+import React, { FC } from "react";
 import Image from "next/image";
 import { styCardWrapper } from "./styles";
+import { DriverInfo } from "../../../types/driver";
 
-export const DriverCard = () => {
+interface DriverCardProps {
+  detail: DriverInfo;
+}
+
+export const DriverCard: FC<DriverCardProps> = ({ detail }) => {
   return (
     <>
       <div className={styCardWrapper}>
         <div className="header">
           <p>
-            Driver ID &nbsp;&nbsp;<strong>382648Y</strong>
+            Driver ID &nbsp;&nbsp;<strong>{detail.id.value}</strong>
           </p>
         </div>
         <div className="driver-info">
@@ -18,16 +23,16 @@ export const DriverCard = () => {
 
           <dl className="driver-data">
             <dt>Nama Driver</dt>
-            <dd>Black hot drink</dd>
+            <dd>{`${detail.name.title} ${detail.name.first} ${detail.name.last}`}</dd>
 
             <dt>Telepon</dt>
-            <dd>White cold drink</dd>
+            <dd>{detail.phone}</dd>
 
             <dt data-hidden="true">Email</dt>
-            <dd>White cold drink</dd>
+            <dd>{detail.email}</dd>
 
             <dt data-hidden="true">Tanggal Lahir</dt>
-            <dd>White cold drink</dd>
+            <dd>{detail.dob.date}</dd>
           </dl>
         </div>
       </div>

@@ -2,7 +2,7 @@ import { css } from "@emotion/css";
 import { YN100, NN200, N0L } from "@styles/variables/colors";
 import { mq } from "@styles/helpers";
 import { MD, LG, XL } from "@styles/variables/breakpoints";
-import { main1 } from "@styles/base";
+import { main1, body2 } from "@styles/base";
 
 export const styDriverHeader = css`
   display: grid;
@@ -99,9 +99,15 @@ export const stySearchWrapper = css`
     padding: 13px 12px 13px 0;
   }
 `;
+export const styDriverCardWrapper = css`
+  flex-grow: 1;
+  max-height: 100%;
+  overflow: auto;
+`;
 
 export const styDriverCardList = css`
   display: grid;
+
   grid: auto-flow auto / 1fr;
   grid-gap: 24px;
   margin-top: 32px;
@@ -111,7 +117,6 @@ export const styDriverCardList = css`
     margin-right: -48px;
     padding-right: 48px;
     grid: auto / auto-flow minmax(320px, 400px);
-  
   }
 
   ${mq(LG)} {
@@ -119,5 +124,69 @@ export const styDriverCardList = css`
     padding-right: 48px;
     grid: auto / auto-flow minmax(320px, 400px);
     grid-gap: 48px;
+  }
+`;
+
+export const styButtonNav = css`
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 16px;
+
+  > button {
+    width: 100%;
+    height: 48px;
+  }
+
+  ${mq(LG)} {
+    margin-top: 24px;
+    flex-direction: row-reverse;
+    column-gap: 16px;
+
+    > button {
+      cursor: pointer;
+      padding: 16px;
+      position: relative;
+      background: transparent;
+      border: none;
+      width: auto;
+      ${body2};
+
+      &:disabled {
+        cursor: not-allowed;
+
+        &:before,
+        &:after {
+          opacity: 0.2;
+        }
+      }
+
+      &:before {
+        content: "";
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        background: url("/icons/ic-arrow.svg");
+        background-size: 14px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        top: 15px;
+      }
+
+      &.next {
+        &:before {
+          right: -10px;
+        }
+      }
+
+      &.prev {
+        &:before {
+          left: -10px;
+          transform: rotate(180deg);
+        }
+      }
+    }
   }
 `;
