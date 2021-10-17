@@ -1,47 +1,39 @@
-import React, { FC, useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
+import React, { FC } from "react";
+import SiderbarItem from "./SiderbarItem";
 import { styAsideWrapper } from "./styles";
 
 interface SidebarProps {
   display: boolean;
+  onClickMenu: () => void;
 }
 
-export const Sidebar: FC<SidebarProps> = ({ display }) => {
+export const Sidebar: FC<SidebarProps> = ({ display, onClickMenu }) => {
   return (
     <aside {...(display && { "data-open": true })} className={styAsideWrapper}>
       <ul>
         <li>
-          <Link href="/">
-            <a>
-              <div className="icon">
-                <Image src="/icons/ic-home.svg" alt="" layout="fill" />
-              </div>
-              <p>Beranda</p>
-            </a>
-          </Link>
+          <SiderbarItem
+            onClick={onClickMenu}
+            path="/"
+            image="/icons/ic-home.svg"
+            title="Beranda"
+          />
         </li>
         <li>
-          <Link href="/DriverManagement">
-            <a>
-              <div className="icon">
-                <Image src="/icons/ic-calendar.svg" alt="" layout="fill" />
-              </div>
-
-              <p>Driver Management</p>
-            </a>
-          </Link>
+          <SiderbarItem
+            onClick={onClickMenu}
+            path="/DriverManagement"
+            image="/icons/ic-user.svg"
+            title="Driver Management"
+          />
         </li>
         <li>
-          <Link href="/Pickup">
-            <a>
-              <div className="icon">
-                <Image src="/icons/ic-user.svg" alt="" layout="fill" />
-              </div>
-
-              <p>Pickup</p>
-            </a>
-          </Link>
+          <SiderbarItem
+            onClick={onClickMenu}
+            path="/Pickup"
+            image="/icons/ic-calendar.svg"
+            title="Pickup"
+          />
         </li>
       </ul>
     </aside>

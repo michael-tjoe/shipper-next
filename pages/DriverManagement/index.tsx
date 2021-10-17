@@ -1,9 +1,14 @@
 import React from "react";
 import Button from "@shared/components/Button";
 import DriverCard from "@components/DriverManagement/DriverCard";
-import { styDriverHeader, stySearchWrapper, styDriverCardList } from "@styles/driver.style";
+import {
+  styDriverHeader,
+  stySearchWrapper,
+  styDriverCardList,
+} from "@styles/driver.style";
 
-export const DriverManagement = () => {
+export const DriverManagement = ({ data }) => {
+  console.log("driverList: ", data);
   return (
     <>
       <div className={styDriverHeader}>
@@ -39,5 +44,23 @@ export const DriverManagement = () => {
     </>
   );
 };
+
+
+
+
+export async function getServerSideProps() {
+  const res = await fetch(`https://randomuser.me/api/?results=30`);
+  const data = await res.json();
+
+  if (!data) {
+    return {
+      notFound: true,
+    };
+  }
+
+  return {
+    props: { data },
+  };
+}
 
 export default DriverManagement;
