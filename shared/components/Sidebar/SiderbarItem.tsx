@@ -6,6 +6,7 @@ interface SidebarItemProps {
   path: string;
   image: string;
   title: string;
+  isActive: boolean;
   onClick: () => void;
 }
 
@@ -13,11 +14,12 @@ export const SidebarItem: FC<SidebarItemProps> = ({
   image,
   path,
   title,
+  isActive,
   onClick,
 }) => {
   return (
     <Link href={path}>
-      <a onClick={onClick}>
+      <a className={`${isActive ? "active" : ""}`} onClick={onClick}>
         <div className="icon">
           <Image src={image} alt="" layout="fill" />
         </div>

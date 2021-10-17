@@ -1,5 +1,5 @@
 import { css } from "@emotion/css";
-import { N0L, NN100 } from "@styles/variables/colors";
+import { N0L, NN100, YN100 } from "@styles/variables/colors";
 import { mq } from "@styles/helpers";
 import { MD } from "@styles/variables/breakpoints";
 import { body2 } from "@styles/base";
@@ -52,6 +52,12 @@ export const styAsideWrapper = css`
           width: 24px;
           height: 24px;
           position: relative;
+        }
+
+        &.active {
+          p {
+            color: ${YN100};
+          }
         }
       }
     }
