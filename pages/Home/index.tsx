@@ -1,12 +1,27 @@
 import React from "react";
-import Button from "@shared/components/Button";
+import { styMainCard } from "@styles/home.style";
 
 export const Homepage = () => {
   return (
     <>
-      <h1 style={{ color: "white" }}>HOME PAGE</h1>
-      {/* <div>Homepage</div>
-      <Button block>Cari Tarif</Button> */}
+      <div className={styMainCard}>
+        <div className="title">
+          <h1>Homepage</h1>
+          <p>This page is responsive, adjust size to see the mobile version.</p>
+        </div>
+      </div>
+      <div className={styMainCard}>
+        <div className="title">
+          <h1>Github</h1>
+          <p>https://github.com/michael-tjoe/shipper-next</p>
+        </div>
+      </div>
+      <div className={styMainCard}>
+        <div className="title">
+          <h1>Tech Stack</h1>
+          <p>NextJs , EmotionJs, React Testing Library</p>
+        </div>
+      </div>
     </>
   );
 };

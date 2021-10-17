@@ -23,9 +23,9 @@ export const styAsideWrapper = css`
   }
 
   ${mq(MD)} {
+    transition: unset;
     width: 25%;
     opacity: 1;
-    transform: scale(1);
     visibility: visible;
   }
 
