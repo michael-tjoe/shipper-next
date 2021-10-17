@@ -14,10 +14,17 @@ export type DriveId = {
   value: string;
 };
 
+export type DriverPicture = {
+  large: string;
+  medium: string;
+  thumbnail: string;
+};
+
 export interface DriverInfo {
   name: DriverName;
   email: string;
   dob: DriveDob;
   phone: string;
   id: DriveId;
+  picture: DriverPicture;
 }

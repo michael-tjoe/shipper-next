@@ -1,4 +1,12 @@
-import React, { FC, useMemo, useState, useRef, useEffect } from "react";
+import React, {
+  FC,
+  ChangeEvent,
+  useMemo,
+  useState,
+  useRef,
+  useEffect,
+} from "react";
+import useDebounce from "@hooks/useDebouce";
 import Button from "@shared/components/Button";
 import DriverCard from "@components/DriverManagement/DriverCard";
 import { DriverInfo } from "../../types/driver";
@@ -23,6 +31,15 @@ export const DriverManagement: FC<DriverManagementProps> = ({ data }) => {
   const [pageStatus, setPageStatus] = useState({
     currentPage: DEFAULT_CURRENT_PAGE,
     pageSize: DEFAULT_PAGE_SIZE,
+    keyword: "",
+  });
+  const [searchKeyword, setSearchKeyword] = useState("");
+
+  const keyword = useDebounce(searchKeyword, 500, () => {
+    setPageStatus({
+      ...pageStatus,
+      keyword: searchKeyword,
+    });
   });
 
   const totalPages = Math.ceil(Number(data.length) / DEFAULT_PAGE_SIZE);
@@ -39,13 +56,23 @@ export const DriverManagement: FC<DriverManagementProps> = ({ data }) => {
       window.scrollTo(0, 0);
       wrapperEl.scrollTo(0, 0);
     }
-  }, [pageStatus]);
+  }, [pageStatus.currentPage]);
 
   const list = useMemo(() => {
+    if (pageStatus.keyword) {
+      return data.filter((driverData) => {
+        return driverData.name.first.toLowerCase() === keyword.toLowerCase();
+      });
+    }
+
     return data.filter((_: DriverInfo, index: number) => {
       return index >= offset && index <= limit;
     });
   }, [pageStatus]);
+
+  const handleChangeSearchKeyword = (e: ChangeEvent<HTMLInputElement>) => {
+    setSearchKeyword(e.target.value);
+  };
 
   const handleNextPage = () => {
     if (hasNext) {
@@ -86,6 +113,7 @@ export const DriverManagement: FC<DriverManagementProps> = ({ data }) => {
               type="text"
               aria-label="cari driver"
               placeholder="Cari driver"
+              onChange={handleChangeSearchKeyword}
             />
           </div>
           <Button block>Tambah Driver</Button>
@@ -103,14 +131,24 @@ export const DriverManagement: FC<DriverManagementProps> = ({ data }) => {
             );
           })}
         </div>
-        <div className={styButtonNav}>
-          <button disabled={!hasNext} onClick={handleNextPage} className="next">
-            Next Page
-          </button>
-          <button disabled={!hasPrev} onClick={handlePrevPage} className="prev">
-            Previous Page
-          </button>
-        </div>
+        {!pageStatus.keyword && (
+          <div className={styButtonNav}>
+            <button
+              disabled={!hasNext}
+              onClick={handleNextPage}
+              className="next"
+            >
+              Next Page
+            </button>
+            <button
+              disabled={!hasPrev}
+              onClick={handlePrevPage}
+              className="prev"
+            >
+              Previous Page
+            </button>
+          </div>
+        )}
       </div>
     </>
   );
@@ -118,7 +156,7 @@ export const DriverManagement: FC<DriverManagementProps> = ({ data }) => {
 
 export async function getServerSideProps() {
   const res = await fetch(
-    `https://randomuser.me/api/?inc=id,name,phone,email,dob&results=31&seed=abc`
+    `https://randomuser.me/api/?inc=id,name,phone,email,dob,picture&results=31&seed=abc`
   );
   const data = await res.json();
 

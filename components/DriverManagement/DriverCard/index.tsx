@@ -18,12 +18,12 @@ export const DriverCard: FC<DriverCardProps> = ({ detail }) => {
         </div>
         <div className="driver-info">
           <div className="photo">
-            <Image alt="" layout="fill" src="/placeholder-user.jpeg" />
+            <Image alt="" layout="fill" src={ detail.picture.medium} />
           </div>
 
           <dl className="driver-data">
             <dt>Nama Driver</dt>
-            <dd>{`${detail.name.title} ${detail.name.first} ${detail.name.last}`}</dd>
+            <dd>{`${detail.name.first} ${detail.name.last}`}</dd>
 
             <dt>Telepon</dt>
             <dd>{detail.phone}</dd>
