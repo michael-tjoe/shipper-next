@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "@shared/components/Button";
-import DriverCard from "./components/DriverCard";
-import { styDriverHeader, stySearchWrapper, styDriverCardList } from "./styles";
+import DriverCard from "@components/DriverManagement/DriverCard";
+import { styDriverHeader, stySearchWrapper, styDriverCardList } from "@styles/driver.style";
 
 export const DriverManagement = () => {
   return (

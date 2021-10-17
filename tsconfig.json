@@ -16,6 +16,7 @@
     "baseUrl": "./", 
     "paths": {
       "@shared/*": ["shared/*"],
+      "@components/*": ["components/*"],
       "@styles/*": ["styles/*"],
       "@pages/*": ["pages/*"],
       "@constants/*": ["constants/*"]
