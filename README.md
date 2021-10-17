@@ -11,13 +11,13 @@ yarn dev
 ```
 
 ## Folder
-Components: List of page components
-Helpers   : Utility function
-Hooks     : React hooks
-Styles    : Page styles, mixins, color design system and breakpoints
-Page      : Contain nextjs page
-Shared    : Contain main layout components (header, footer , layout, button)
-Types     : Contain data types
+Components: List of page components <br />
+Helpers   : Utility function <br />
+Hooks     : React hooks <br />
+Styles    : Page styles, mixins, color design system and breakpoints <br />
+Page      : Contain nextjs page <br />
+Shared    : Contain main layout components (header, footer , layout, button) <br />
+Types     : Contain data types <br />
 
 
 
