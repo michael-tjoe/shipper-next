@@ -13,7 +13,7 @@ export const Sidebar: FC<SidebarProps> = ({ display, onClickMenu }) => {
   const currentPath = router.pathname;
 
   return (
-    <aside {...(display && { "data-open": true })} className={styAsideWrapper}>
+    <aside data-testid="shipperSidebar" {...(display && { "data-open": true })} className={styAsideWrapper}>
       <ul>
         <li>
           <SiderbarItem

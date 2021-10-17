@@ -26,7 +26,7 @@ export const Button: FC<ButtonProps> = ({
       {children}
 
       {icon && (
-        <div className="icon">
+        <div data-testid="btnIcon" className="icon">
           <Image alt="" src={icon} layout="fill" />
         </div>
       )}

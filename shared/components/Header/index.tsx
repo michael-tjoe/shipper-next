@@ -15,6 +15,7 @@ export const Header: FC<HeaderProps> = ({
     <header className={styHeaderWrapper}>
       <div className="logo">
         <button
+          data-testid="btnMobileNavWrapper"
           onClick={onClickMobileButton}
           aria-label="sidebar"
           className={styBurgerButton}
@@ -22,6 +23,7 @@ export const Header: FC<HeaderProps> = ({
         >
           <div
             {...(showMobileNav && { ["data-open"]: true })}
+            data-testid="btnMobileNav"
             className="mobile-button"
           >
             <span />
